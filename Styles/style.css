@@ -1,0 +1,798 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+/* VARIABLES */
+:root {
+  --c-dark: #000807;
+  --c-brand: #ffec5c;
+  --c-brand-light: #fffbfe;
+  --c-body: #ea9e8d;
+  --box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.08);
+  --mustar: #cca12a;
+}
+
+.header {
+  min-height: 100vh;
+  width: 100%;
+  background-image: linear-gradient(rgba(4, 9, 30, 0.5), rgba(4, 9, 30, 0.5)),
+    url('../Images/banner.png');
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+
+nav {
+  display: flex;
+  padding: 2% 6%;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  width: 150px;
+  float: left;
+  height: 100%;
+  margin: 0 0 0 5%;
+}
+.nav-links {
+  flex: 1;
+  text-align: right;
+}
+.nav-links ul a {
+  list-style: none;
+  display: inline-block;
+  padding: 8px 12px;
+  position: relative;
+  text-decoration: none;
+}
+
+.nav-links ul a li {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 22px;
+  font-weight: bold;
+}
+.nav-links ul a::after {
+  content: "";
+  width: 0%;
+  height: 2px;
+  background-color: #ecd44c;
+  display: block;
+  margin: auto;
+  transition: 0.7s;
+}
+
+.nav-links ul a:hover::after {
+  width: 100%;
+}
+
+.text-header {
+  width: 90%;
+  color: #ffffff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -30%);
+  text-align: center;
+}
+
+.text-header h1 {
+  font-size: 62px;
+}
+.text-header h3 {
+  margin: 10px 0 40 px;
+  font-size: 16px;
+  color: #ffffff;
+}
+.sticky-top {
+  position: sticky;
+  top: 0;
+  z-index: 1020;
+  background-color: #cca12a;
+  min-height: max-content;
+}
+.aboutUs-button {
+  display: inline-block;
+  text-decoration: none;
+  color: #ffffff;
+  border: 1px solid #ffffff;
+  padding: 16px 34px;
+  font-size: 16px;
+  background: transparent;
+  position: relative;
+  cursor: pointer;
+}
+
+.aboutUs-button:hover {
+  border: 1px solid #ea9e8d;
+  background: #ea9e8d;
+  transition: 1s;
+}
+
+/* buton pentru sectiunile de adopta/doneaza/voluntariat din pagina de home */
+.home-button {
+  display: inline-block;
+  text-decoration: none;
+  color: #5b8e7d;
+  border: 1px solid #5b8e7d;
+  padding: 16px 34px;
+  font-size: 16px;
+  background: #ffffff;
+  position: relative;
+  cursor: pointer;
+}
+.home-button:hover {
+  border: 1px solid #a7d3c4;
+  background: #a7d3c4;
+  transition: 1s;
+}
+
+#nav-linksToggle {
+  display: none;
+}
+.nav-links-icon {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .text-header h1 {
+    font-size: 30px;
+  }
+  .nav-links {
+    width: 100%;
+    height: auto;
+  }
+  .nav-links ul {
+    display: block;
+    max-height: 0;
+    overflow: scroll;
+    -webkit-transition: max-height 0.3s;
+    -moz-transition: max-height 0.3s;
+    -ms-transition: max-height 0.3s;
+    -o-transition: max-height 0.3s;
+    transition: max-height 0.3s;
+  }
+  .nav-links ul a {
+    text-align: left;
+    width: 100%;
+    height: 50px;
+    background-color: #f1c40f;
+    padding: 10px 0px 10px 5%;
+  }
+
+  .nav-links-icon {
+    width: 100px;
+    height: inherit;
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding-right: 0.7rem;
+    line-height: 50px;
+    color: #ffffff;
+  }
+  #nav-linksToggle:checked ~ ul {
+    max-height: 350px;
+  }
+  .nav-links-icon i {
+    font-size: 1.7em;
+    color: #000807;
+  }
+
+  .logo {
+    width: 120px;
+    float: left;
+    height: 100%;
+    margin: 0 0 0 5%;
+  }
+  .sticky-top {
+    position: sticky;
+    top: 0;
+    z-index: 1020;
+    background-color: #cca12a;
+    min-height: 9vh;
+  }
+}
+
+/* Misiunea asociatiei -- pagina de home*/
+.Mission {
+  width: 80%;
+  margin: auto;
+  text-align: justify;
+  padding-top: 70px;
+}
+.ourMission {
+  flex-basis: 40%;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  position: relative;
+  overflow: hidden;
+  background: #fcf5da;
+  border-radius: 15px;
+  margin-bottom: 5%;
+  padding: 20px 20px;
+  box-sizing: border-box;
+  transition: 0.5s;
+}
+.ourMission:hover {
+  box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.2);
+}
+.ourMission img {
+  width: 100%;
+  padding: 0 0;
+}
+/* cine suntem noi? -- pagina de home*/
+
+.LittleGallery {
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  padding-top: 50px;
+}
+.GalleryCol img {
+  width: 100%;
+  height: 100%;
+}
+.GalleryCol {
+  flex-basis: 31%;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* cum poti fi alaturi de noi?  -- pagina de home*/
+
+.withUs {
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  padding-top: 70px;
+}
+h1 {
+  font-size: 30px;
+  font-weight: 600;
+  text-align: center;
+}
+.withUs p,
+.withUs ul {
+  color: #000807;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 22px;
+  padding: 10px;
+  text-align: justify;
+}
+
+.row {
+  margin-top: 5%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.cols {
+  flex-basis: 31%;
+  background: #fcf5da;
+  border-radius: 15px;
+  margin-bottom: 5%;
+  padding: 20px 20px;
+  box-sizing: border-box;
+  transition: 0.5s;
+}
+.cols img {
+  width: 100%;
+}
+
+h3 {
+  text-align: center;
+  font-weight: 600;
+  margin: 10px 0;
+}
+
+.cols:hover {
+  box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+  .row {
+    flex-direction: column;
+  }
+}
+
+/* bara pentru mai multe detalii --pagina de home*/
+
+.contactLink {
+  margin: 100px auto;
+  width: 80%;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url('../Images/subsol.jpg');
+  background-position: center;
+  background-size: cover;
+  border-radius: 10px;
+  text-align: center;
+  padding: 35px 0;
+}
+.contactLink h1 {
+  color: #ffffff;
+  margin-bottom: 40px;
+  padding: 0;
+}
+
+@media (max-width: 768px) {
+  .contactLink h1 {
+    font-size: 15px;
+  }
+}
+
+/* numere despre cazurile asociatiei */
+.numbers {
+  width: 100%;
+  margin: auto;
+  text-align: center;
+  padding: 10px 0;
+  background-color: #cca12a;
+}
+.numbersCols h4 {
+  font-size: 15px;
+}
+.numbersCols h1 {
+  font-size: 40px;
+}
+.numbersCols {
+  flex-basis: 31%;
+  border-radius: 10px;
+  margin-bottom: 60px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* footer */
+.footer {
+  width: 100%;
+  text-align: center;
+  padding: 10px 0;
+  background-color: #000000;
+  background-position: center;
+  background-size: cover;
+}
+.footer h4 {
+  margin-bottom: 25px;
+  margin-top: 20px;
+  font-weight: 600;
+  color: #ffffff;
+  font-size: small;
+}
+.footer i {
+  color: #ffffff;
+  padding-left: 8px;
+}
+
+/* contact page */
+
+.subHeader {
+  height: 55vh;
+  width: 100%;
+  background-image: linear-gradient(rgba(4, 9, 30, 0.6), rgba(4, 9, 30, 0.6)),
+    url('../Images/contact.jpg');
+  background-position: center;
+  position: relative;
+  background-size: cover;
+  text-align: center;
+  color: #ffffff;
+}
+
+@media (max-width: 768px) {
+  .subHeader {
+    height: 30vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4, 9, 30, 0.6), rgba(4, 9, 30, 0.6)),
+      url('../Images/contact.jpg');
+    background-position: center;
+    position: relative;
+    background-size: cover;
+    text-align: center;
+    color: #ffffff;
+  }
+}
+
+/* continut pagina contact */
+.contact {
+  position: relative;
+  min-height: 100vh;
+  padding: 50px 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #e3dbdb;
+}
+.contactContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.contactContainer .contactInfo {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+.contactContainer .contactInfo .box {
+  position: relative;
+  padding: 20px 0;
+  display: flex;
+}
+
+.contactContainer .contactInfo .box .icon {
+  min-width: 60px;
+  height: 60px;
+  background: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  font-size: 22px;
+}
+.contactContainer .contactInfo .box .text {
+  display: flex;
+  margin-left: 20px;
+  font-size: 16px;
+  color: #000000;
+  flex-direction: column;
+  font-weight: 300;
+}
+
+.contactContainer .contactInfo .box .text h3 {
+  font-weight: 600;
+  color: #5b8e7d;
+  text-align: left;
+}
+
+.contactForm {
+  width: 40%;
+  padding: 40px;
+  background: #ffffff;
+}
+.contactForm h2 {
+  font-size: 30px;
+  color: #000000;
+  font-weight: 600;
+}
+
+.contactForm .inputBox {
+  position: relative;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.contactForm .inputBox input,
+.contactForm .inputBox textarea {
+  width: 100%;
+  padding: 5px 0;
+  font-size: 16px;
+  margin: 10px 0;
+  border: none;
+  border-bottom: 2px solid #000000;
+  outline: none;
+  resize: none;
+}
+
+.contactForm .inputBox span {
+  position: absolute;
+  left: 0;
+  padding: 5px 0;
+  font-size: 16px;
+  margin: 10px 0;
+  pointer-events: none;
+  transition: 0.5s;
+  color: #000000;
+}
+
+.contactForm .inputBox input:focus ~ span,
+.contactForm .inputBox input:valid ~ span,
+.contactForm .inputBox textarea:focus ~ span,
+.contactForm .inputBox textarea:valid ~ span {
+  color: #cca12a;
+  font-size: 12px;
+  transform: translateY(-20px);
+}
+
+.contactForm .inputBox input[type="submit"] {
+  width: 100px;
+  background: #5b8e7d;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  font-size: 18px;
+}
+
+@media (max-width: 800px) {
+  .contact {
+    padding: 50px;
+  }
+  .contactContainer {
+    flex-direction: column;
+  }
+  .contactContainer .contactInfo {
+    margin-bottom: 40px;
+  }
+  .contactContainer .contactInfo,
+  .contactForm {
+    width: 100%;
+  }
+}
+
+/* pagina adoptii */
+
+.subHeaderAdoptii {
+  height: 50vh;
+  width: 100%;
+  background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)),
+    url('../Images/adopta-un-caine.png');
+  background-position: center;
+  position: relative;
+  background-size: cover;
+  text-align: center;
+  color: #ffffff;
+}
+@media (max-width: 768px) {
+  .subHeaderAdoptii {
+    height: 30vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)),
+      url('../Images/adopta-un-caine.png');
+    background-position: center;
+    position: relative;
+    background-size: cover;
+    text-align: center;
+    color: #ffffff;
+  }
+}
+.adoptMe {
+  width: 50%;
+  margin: auto;
+  text-align: center;
+  padding-top: 50px;
+}
+
+.adoptMeCols img {
+  width: 100%;
+  height: 100%;
+}
+.adoptMeCols {
+  flex-basis: 35%;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  position: relative;
+  overflow: hidden;
+}
+
+.SidebySide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 40vh;
+  background: transparent;
+  padding-top: 50px;
+}
+.containerAdoptii {
+  position: relative;
+  width: 1000px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.containerAdoptii .ImgText {
+  position: relative;
+  max-width: 450px;
+  background-color: #ffda44;
+  margin: 10px;
+  padding: 15px;
+  display: flex;
+  border-radius: 10%;
+  margin-bottom: 5%;
+}
+
+.containerAdoptii .ImgText .imgBox {
+  max-width: 150px;
+  flex: 0 0 150px;
+}
+
+.containerAdoptii .ImgText .imgBox img {
+  max-width: 100%;
+  padding-top: 50px;
+}
+
+.containerAdoptii .ImgText .contentAdoptii {
+  margin-left: 20px;
+  text-align: justify;
+}
+
+@media (max-width: 991px) {
+  .containerAdoptii {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 768px) {
+  .containerAdoptii {
+    flex-direction: column;
+  }
+  .containerAdoptii .ImgText {
+    flex-direction: column;
+    max-width: 350px;
+  }
+  .containerAdoptii .ImgText .imgBox {
+    max-width: 100%;
+  }
+  .containerAdoptii .ImgText .contentAdoptii {
+    margin-left: 0;
+  }
+  .containerAdoptii .ImgText .imgBox img {
+    max-width: 100%;
+    padding-top: 10px;
+  }
+}
+
+.cointaierFormAdoptie {
+  padding-top: 50px;
+}
+.cointaierFormAdoptie p {
+  padding-top: 10px;
+  padding-bottom: 15px;
+  text-align: justify;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.formAdoptie {
+  /* padding-top: 50px; */
+  width: 100%;
+  margin: auto;
+  text-align: center;
+  padding: 10px 0;
+  background-color: #cca12a;
+}
+
+/* unvisited link */
+.formAdoptie a:link {
+  color: #000000;
+}
+
+/* visited link */
+.formAdoptie a:visited {
+  color: #000000;
+}
+
+/* mouse over link */
+.formAdoptie a:hover {
+  color: #ea9e8d;
+}
+
+/* selected link */
+.formAdoptie a:active {
+  color: blue;
+}
+
+/* pagina despre noi */
+.aboutheader {
+  height: 55vh;
+  width: 100%;
+  background-image: linear-gradient(rgba(4, 9, 30, 0.6), rgba(4, 9, 30, 0.6)),
+    url('../Images/about.jpg');
+  background-position: center;
+  position: relative;
+  background-size: cover;
+  text-align: center;
+  color: #ffffff;
+}
+.text-headerAbout {
+  width: 90%;
+  color: #ffffff;
+  position: absolute;
+  top: 50%;
+  left: 53%;
+  transform: translate(-50%, -30%);
+  text-align: center;
+}
+
+.text-headerAbout h1 {
+  font-size: 62px;
+}
+
+.aboutUs {
+  padding-top: 30px;
+}
+
+.aboutUs h1 {
+  padding-bottom: 10px;
+}
+
+.cols ul li {
+  padding-bottom: 4px;
+}
+.cols ul {
+  text-align: justify;
+}
+
+/* pagina donatii */
+.subHeaderDonatii {
+  height: 50vh;
+  width: 100%;
+  background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)),
+    url('../Images/donatit.png');
+  background-position: center;
+  position: relative;
+  background-size: cover;
+  text-align: center;
+  color: #ffffff;
+}
+@media (max-width: 768px) {
+  .subHeaderDonatii {
+    height: 30vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)),
+      url('../Images/donatit.png');
+    background-position: center;
+    position: relative;
+    background-size: cover;
+    text-align: center;
+    color: #ffffff;
+  }
+}
+.donatii {
+  text-align: center;
+}
+@media (max-width: 768px) {
+  .donatii h1 {
+    font-size: 20px;
+  }
+  .donatii h3 {
+    font-size: 13px;
+  }
+}
+
+/* pagina voluntariat */
+
+.subHeaderVoluntariat {
+  height: 50vh;
+  width: 100%;
+  background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)),
+    url('../Images/Hero-Involved.jpg');
+  background-position: center;
+  position: relative;
+  background-size: cover;
+  text-align: center;
+  color: #ffffff;
+}
+@media (max-width: 768px) {
+  .subHeaderVoluntariat {
+    height: 30vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)),
+    url('../Images/Hero-Involved.jpg');
+    background-position: center;
+    position: relative;
+    background-size: cover;
+    text-align: center;
+    color: #ffffff;
+  }
+}
+
+/* pagina voluntariat */
+.contactLinkVoluntariat{
+  margin: 100px auto;
+  width: 80%;
+  background-color: #fcf5da;
+  background-position: center;
+  background-size: cover;
+  border-radius: 10px;
+  text-align: center;
+  padding: 35px 0;
+}
